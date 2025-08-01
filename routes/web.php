@@ -17,10 +17,12 @@ Route::view('dashboard', 'dashboard')
 
 Route::middleware(['auth', 'verified'])->group(function() {
     //Company Routes
-    Route::get('companies', [CompanyController::class, 'index'])->name('companies');
+    Route::get('companies', [CompanyController::class, 'index'])->name('companies.index');
+    Route::get('companies/create', [CompanyController::class, 'create'])->name('companies.create');
+    Route::post('companies', [CompanyController::class, 'store'])->name('companies.store');
 
     //Employee Routes
-    Route::get('employees', [EmployeeController::class, 'index'])->name('employees');
+    Route::get('employees', [EmployeeController::class, 'index'])->name('employees.index');
 });
 
 Route::middleware(['auth'])->group(function () {
