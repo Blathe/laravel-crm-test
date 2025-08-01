@@ -8,16 +8,16 @@
         @if(count($companies) === 0)
             <div class="relative h-full flex-1 overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700 p-4">
                     <div class="flex flex-col gap-2 items-center justify-center">
-                        <p>You don't have any companies yet.</p>
+                        <p>{{ __('You do not have any companies yet.') }}</p>
                         <a href="{{ route('companies.create') }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                            Add Company
+                            {{ __('Add Company') }}
                         </a>
                     </div>
             </div>
         @else
             <h1>Companies</h1>
                 <a href="{{ route('companies.create') }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 self-start focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                    Add Company
+                    {{ __('Add Company') }}
                 </a>
                 <div class="relative h-full flex-1 overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700 p-4">
                     <div class="flex flex-row flex- gap-4">
@@ -27,7 +27,7 @@
                                 <p>{{$company->name}}</p>
                                 <p>Employees: {{$company->employeeCount()}}</p>
                                 @if(isset($company->website))
-                                    <p>Website: <a href="{{$company->website}}" class="underline text-blue-400">Link</a></p>
+                                    <p>Website: <a href="{{$company->website}}" class="underline text-blue-400">{{ __('Link') }}</a></p>
                                 @endif
                             </div>
                         @endforeach
