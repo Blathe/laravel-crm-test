@@ -27,7 +27,6 @@ class AppServiceProvider extends ServiceProvider
      * Set up our model rules.
      */
     private function setupModelRules(): void {
-        Model::preventLazyLoading();
         Model::shouldBeStrict();
     }
 }
