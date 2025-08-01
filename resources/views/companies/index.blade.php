@@ -25,7 +25,7 @@
                             <div class="p-4 outline-black rounded-md outline flex flex-col gap-2">
                                 <img src="https://placehold.co/500x500" width="128" height="128" class="bg-cover"  alt="Placeholder alt text"/>
                                 <p>{{$company->name}}</p>
-                                <p>Employees: 0</p>
+                                <p>Employees: {{$company->employees->count()}}</p>
                                 @if(isset($company->website))
                                     <p>Website: <a href="{{$company->website}}" class="underline text-blue-400">Link</a></p>
                                 @endif

@@ -13,7 +13,7 @@ class CompanyController extends Controller
      * Handles displaying all companies.
      */
     public function index() {
-        $companies = Company::paginate(10);
+        $companies = Company::with('employees')->paginate(10);
 
         return view('companies.index', ['companies' => $companies]);
     }
